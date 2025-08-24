@@ -1,4 +1,4 @@
-package hello.newsfeed.auth.dto;
+package hello.newsfeedPractice.auth.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -20,7 +20,7 @@ public class AuthRequest {
     @NotEmpty(message = "비밀번호는 필수입니다. 비밀번호를 입력해주세요.")
     @Size(min = 8, message = "비밀번호는 8글자 이상이어야 합니다.")
     @Pattern(
-            regexp = "(?=\\s+$)(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*\\p{Punct}).*$",
+            regexp = "^(?=\\S+$)(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*\\p{Punct}).*$",
             message = "비밀번호는 대/소문자, 숫자, 특수문자를 포함하여야 합니다.(공백금지)"
     )
     private String password;
